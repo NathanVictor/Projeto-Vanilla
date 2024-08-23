@@ -1,26 +1,31 @@
+import { renderPokedexPage } from "./pokedex-page.js";
+
 document.addEventListener('DOMContentLoaded', () => {
   // Cria os elementos principais
   const main = document.createElement('main');
+
+  const wrapperSection = document.createElement('section');
+  wrapperSection.className = 'wrapper';
 
   // Seção de login
   const loginSection = document.createElement('section');
   loginSection.className = 'login';
 
-  // Wrapper principal
-  const wrapper1 = document.createElement('div');
-  wrapper1.className = 'wrapper';
+  // Wrapper principal formulario
+  const wrapperForm = document.createElement('div');
+  wrapperForm.className = 'wrapper';
 
   // Logo
   const logo = document.createElement('img');
-  logo.src = './images/logo.png';
+  logo.src = './public/images/logo.png';
   logo.className = 'login__logo';
-  wrapper1.appendChild(logo);
+  wrapperForm.appendChild(logo);
 
   // Título
   const title = document.createElement('h1');
   title.className = 'login__title';
   title.textContent = 'Fazer login';
-  wrapper1.appendChild(title);
+  wrapperForm.appendChild(title);
 
   // Label para nome de usuário
   const usernameLabel = document.createElement('label');
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   usernameInput.name = 'username';
   usernameInput.className = 'input';
   usernameLabel.appendChild(usernameInput);
-  wrapper1.appendChild(usernameLabel);
+  wrapperForm.appendChild(usernameLabel);
 
   // Label para senha
   const passwordLabel = document.createElement('label');
@@ -50,16 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
   passwordInput.name = 'password';
   passwordInput.className = 'input';
   passwordLabel.appendChild(passwordInput);
-  wrapper1.appendChild(passwordLabel);
+  wrapperForm.appendChild(passwordLabel);
 
   // Ícones de login
   const iconsDiv = document.createElement('div');
   iconsDiv.className = 'login__icons';
 
   const icons = [
-      { src: './images/facebook-icon.png', alt: 'facebook', bg: 'var(--blue)' },
-      { src: './images/google-icon.png', alt: 'google', bg: 'var(--light-grey)' },
-      { src: './images/apple-icon.png', alt: 'apple', bg: 'var(--black)' },
+      { src: './public/images/facebook-icon.png', alt: 'facebook', bg: 'var(--blue)' },
+      { src: './public/images/google-icon.png', alt: 'google', bg: 'var(--light-grey)' },
+      { src: './public/images/apple-icon.png', alt: 'apple', bg: 'var(--black)' },
   ];
 
   icons.forEach(icon => {
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       iconsDiv.appendChild(button);
   });
 
-  wrapper1.appendChild(iconsDiv);
+  wrapperForm.appendChild(iconsDiv);
 
   // Checkbox "Manter login"
   const checkboxLabel = document.createElement('label');
@@ -87,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
   checkboxInput.className = 'input--checkbox';
   checkboxLabel.appendChild(checkboxInput);
   checkboxLabel.appendChild(document.createTextNode(' Manter login'));
-  wrapper1.appendChild(checkboxLabel);
+  wrapperForm.appendChild(checkboxLabel);
 
-  // Wrapper secundário
-  const wrapper2 = document.createElement('div');
-  wrapper2.className = 'wrapper';
+  // Wrapper secundário Button
+  const wrapperButton = document.createElement('div');
+  wrapperButton.className = 'wrapper';
 
   // Botão de login (desabilitado)
   const loginButton = document.createElement('button');
@@ -99,11 +104,41 @@ document.addEventListener('DOMContentLoaded', () => {
   loginButton.className = 'login__button';
   loginButton.disabled = false;
 
-  const caminhoIndex = './Pokemon/index.html'; // Caminho correto
-
   loginButton.addEventListener('click', () => {
     if (!loginButton.disabled) {
-      window.location.href = caminhoIndex;
+      
+      // O acontece?
+
+      /**
+       Levar para outra pagina, qual?
+       Pokedex.
+
+       Como? Sem href.
+
+       Como a pagina é criada? render.
+
+
+       1. Apagar o conteudo.
+
+       2. Escrever.
+       */
+
+       main.innerHTML = ''
+
+       renderPokedexPage(main)
+
+      
+      
+
+
+
+
+
+
+
+
+
+
     }
   });
 
@@ -116,24 +151,24 @@ document.addEventListener('DOMContentLoaded', () => {
   svg.appendChild(path);
   loginButton.appendChild(svg);
 
-  wrapper2.appendChild(loginButton);
+  wrapperButton.appendChild(loginButton);
 
   // Links
   const link1 = document.createElement('a');
   link1.href = '#';
   link1.className = 'login__link';
   link1.textContent = 'não consegue iniciar sessão?';
-  wrapper2.appendChild(link1);
+  wrapperButton.appendChild(link1);
 
   const link2 = document.createElement('a');
   link2.href = '#';
   link2.className = 'login__link';
   link2.textContent = 'criar conta';
-  wrapper2.appendChild(link2);
+  wrapperButton.appendChild(link2);
 
   // Adiciona os wrappers à seção de login
-  loginSection.appendChild(wrapper1);
-  loginSection.appendChild(wrapper2);
+  loginSection.appendChild(wrapperForm);
+  loginSection.appendChild(wrapperButton);
 
   // Seção de papel de parede
   const wallpaperSection = document.createElement('section');

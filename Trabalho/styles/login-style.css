@@ -1,27 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Lexend Deca', sans-serif;
-}
-
-:root {
-  --white: #FFF;
-  --whitesmoke: #F9F9F9;
-  --light-grey: #ECECEC;
-  --grey: #C4C4C4;
-  --medium-grey: #A7A7A7;
-  --deep-grey: #343434;
-  --black: #000000;
-  --blue: #1B77F3;
-  --red: #CF3C3F;
-}
-
-main {
-  display: flex;
-}
+@import url('global-styles.css');
 
 .login {
   display: flex;
@@ -198,7 +175,7 @@ main {
 
 .wallpaper {
   width: 100%;
-  background-image: url('/Trabalho/League-Of-Legends/images/wallpaper.jpg');
+  background-image: url('/Trabalho/public/images/wallpaper.jpg');
   background-size: cover;
   background-position: center;
   flex: 1;
