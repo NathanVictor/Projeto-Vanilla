@@ -6,6 +6,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin:0;
+  padding: 0;
   max-width: 500px;
   min-height: 100vh;
   padding: clamp(35px, 8%, 70px);
@@ -173,10 +175,17 @@
   font-weight: 700;
 }
 
+.wallpaper{
+  display: none;
+}
+
+@media (min-width: 600px) {
+  
 .wallpaper {
-  width: 100%;
+  display: flex;
+  width: 70%;
   background-image: url('/Trabalho/public/images/wallpaper.jpg');
   background-size: cover;
   background-position: center;
-  flex: 1;
+  }     
 }

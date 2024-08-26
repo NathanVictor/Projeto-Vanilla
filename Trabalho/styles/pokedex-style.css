@@ -1,3 +1,5 @@
+/* Style Mobile*/
+
 .pokedex {
   width: 100%;
   max-width: 425px;
@@ -69,4 +71,17 @@
 .button:active {
   box-shadow: inset -4px 4px 0 #222;
   font-size: 0.9rem;
+}
+
+/*STYLE DESKTOP */
+
+@media (min-width: 400px) {
+  .pokemon__image {
+    position: absolute;
+    bottom: 55%;
+    left: 50%;
+    transform: translate(-63%, 20%);
+    height: 18%;
+  }
+
 }
