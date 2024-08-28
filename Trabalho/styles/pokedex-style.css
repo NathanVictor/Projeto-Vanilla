@@ -2,7 +2,6 @@
 
 .pokedex {
   width: 100%;
-  max-width: 425px;
 }
 
 .pokemon__image {
@@ -83,5 +82,7 @@
     transform: translate(-63%, 20%);
     height: 18%;
   }
+
+  
 
 }

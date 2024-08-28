@@ -1,5 +1,7 @@
+import { showPokemon } from "../features/showPokemon.js";
+
 // Função para criar e renderizar o HTML
-function renderPokedexPage(main) {
+async function renderPokedexPage(main) {
   // Criando e adicionando a imagem principal do Pokémon
   const imgTag = document.createElement('img');
   imgTag.src = "#";
@@ -33,6 +35,11 @@ function renderPokedexPage(main) {
   
   form.appendChild(input);
   main.appendChild(form);
+  
+  const data = await showPokemon();
+  
+  console.log(data);
+
 
   // Criando e adicionando os botões de navegação
   const buttonsDiv = document.createElement('div');
@@ -60,6 +67,7 @@ function renderPokedexPage(main) {
   // Adicionando tudo ao body
   document.body.appendChild(main);
 }
+
 
 // Exporta a função para ser usada em outros arquivos
 export { renderPokedexPage };
